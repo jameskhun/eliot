@@ -1,40 +1,30 @@
 \name{eliot-package}
 \alias{eliot-package}
-\alias{eliot}
 \docType{package}
 \title{
-What the package does (short line)
+Miscellaneous R Functions
 }
 \description{
-More about what it does (maybe more than one line)
-~~ A concise (1-5 lines) description of the package ~~
-}
+A collection of R functions created by Benjamin E. Lauderdale.  Includes some replication data.}
 \details{
 \tabular{ll}{
 Package: \tab eliot\cr
 Type: \tab Package\cr
 Version: \tab 1.0\cr
-Date: \tab 2015-02-14\cr
+Date: \tab 2012-03-28\cr
 License: \tab GPL (>= 2)\cr
 }
-~~ An overview of how to use the package, including the most ~~
-~~ important functions ~~
+
+Time for you and time for me,\cr
+And time yet for a hundred indecisions,\cr
+And for a hundred visions and revisions,\cr
+Before the taking of a toast and tea.\cr
+\cr
+\emph{The Love Song of J. Alfred Prufrock}, T.S. Eliot
+
 }
 \author{
-Your Name
-
-Maintainer: Your Name <your@email.com>
+Benjamin E. Lauderdale \url{b.e.lauderdale@lse.ac.uk}
 }
-\references{
-~~ Literature or other references for background information ~~
-}
-~~ Optionally other standard keywords, one per line, from file ~~
-~~ KEYWORDS in the R documentation directory ~~
 \keyword{ package }
-\seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
-}
-\examples{
-%% ~~ simple examples of the most important functions ~~
-}
+
