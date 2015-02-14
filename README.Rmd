@@ -1,0 +1,34 @@
+eliot: some R functions
+===============================================
+
+An R package of functions created for various projects.
+
+How to Install
+--------------
+
+You can download the files and build the package from source, or you can use the devtools library to install the package directly from github.
+
+Some preliminaries:
+
+1.  To install the package from github, you will need to install the `devtools` package, using (from R):
+
+    ```S
+    install.packages("devtools")
+    devtools::install_github("lauderdale/eliot")
+    ```
+
+Documentation
+-------------
+
+Nothing yet!
+
+
+Example
+-------
+
+```{r eliot_example}
+
+
+   
+```
+
