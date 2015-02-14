@@ -1,3 +1,0 @@
-# eliot
-
-Nothing here yet...
