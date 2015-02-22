@@ -5,7 +5,7 @@ Version: 0.1
 Date: 2015-02-14
 Author: Benjamin E Lauderdale
 Maintainer: Benjamin E Lauderdale <b.e.lauderdale@lse.ac.uk>
-Description: Not much here yet.
+Description: Not much here yet, and what there is could sure use some documentation.
 License: GPL (>= 2)
 Imports: Rcpp (>= 0.11.3)
 LinkingTo: Rcpp, RcppArmadillo

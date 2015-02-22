@@ -1,13 +1,8 @@
-
-// includes from the plugin
 #include <RcppArmadillo.h>
 
 using namespace Rcpp;
 
-// [[Rcpp::depends(RcppArmadillo)]]
-
 // [[Rcpp::export]]
-
 Rcpp::List wordfishcpp(SEXP wfm, SEXP dir, SEXP priors, SEXP tol){
 
 	// DEFINE INPUTS
