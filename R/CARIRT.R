@@ -1,3 +1,22 @@
+#' A fast C++ implementation of the conditional autoregressive scaling model
+#' 
+#' 
+#' \code{CARIRT} 
+#' @importFrom Rcpp evalCpp
+#' @useDynLib eliot
+#' @param ConnectionMatrix
+#' @param VoteMatrix 
+#' @param IRT.polarity
+#' @param burn.iter
+#' @param mcmc.iter
+#' @param thin.iter
+#' @param store.alpha
+#' @param store.beta
+#' @param store.lambda
+#' @param store.average.pref
+#' @param store.latent.pref
+#' @param store.expected.pref
+#' @export
 CARIRT <- function(ConnectionMatrix,VoteMatrix,IRT.polarity=1,burn.iter=100,mcmc.iter=100,thin.iter=1,store.alpha=FALSE,store.beta=FALSE,store.lambda=FALSE,store.average.pref=FALSE,store.latent.pref=FALSE,store.expected.pref=FALSE){
 	
 library(Rcpp)

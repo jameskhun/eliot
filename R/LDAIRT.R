@@ -1,3 +1,23 @@
+#' A fast C++ implementation of the LDA + IRT scaling model
+#' 
+#' 
+#' \code{LDAIRT} 
+#' @importFrom Rcpp evalCpp
+#' @useDynLib eliot
+#' @param WordSparseMatrix
+#' @param VoteMatrix 
+#' @param LDA.topics
+#' @param LDA.alpha
+#' @param LDA.beta
+#' @param IRT.discrim.prec
+#' @param IRT.polarity
+#' @param burn.iter
+#' @param mcmc.iter
+#' @param save.word.chain
+#' @param save.topic.chain
+#' @param save.ideal.chain
+#' @param save.discrim.chain
+#' @export
 LDAIRT <- function(WordSparseMatrix,VoteMatrix,LDA.topics=10,LDA.alpha=1/LDA.topics,LDA.beta=1,IRT.discrim.prec=0.25,IRT.polarity=1,burn.iter=100,mcmc.iter=100,save.word.chain=FALSE,save.topic.chain=FALSE,save.ideal.chain=TRUE,save.discrim.chain=FALSE){
 	
 library(Rcpp)

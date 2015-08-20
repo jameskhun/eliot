@@ -13,88 +13,72 @@ using namespace Rcpp;
 Rcpp::List CARIRTcpp(SEXP ConnectMatrix, SEXP VoteMatrix, SEXP nonUnanimous, SEXP InitialAveragePrefs, SEXP InitialAlphas, SEXP InitialBetas, SEXP SaveChains, SEXP BurntIterations, SEXP SavedIterations, SEXP ThinningFactor);
 RcppExport SEXP eliot_CARIRTcpp(SEXP ConnectMatrixSEXP, SEXP VoteMatrixSEXP, SEXP nonUnanimousSEXP, SEXP InitialAveragePrefsSEXP, SEXP InitialAlphasSEXP, SEXP InitialBetasSEXP, SEXP SaveChainsSEXP, SEXP BurntIterationsSEXP, SEXP SavedIterationsSEXP, SEXP ThinningFactorSEXP) {
 BEGIN_RCPP
-    SEXP __sexp_result;
-    {
-        Rcpp::RNGScope __rngScope;
-        Rcpp::traits::input_parameter< SEXP >::type ConnectMatrix(ConnectMatrixSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type VoteMatrix(VoteMatrixSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type nonUnanimous(nonUnanimousSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type InitialAveragePrefs(InitialAveragePrefsSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type InitialAlphas(InitialAlphasSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type InitialBetas(InitialBetasSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type SaveChains(SaveChainsSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type BurntIterations(BurntIterationsSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type SavedIterations(SavedIterationsSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type ThinningFactor(ThinningFactorSEXP );
-        Rcpp::List __result = CARIRTcpp(ConnectMatrix, VoteMatrix, nonUnanimous, InitialAveragePrefs, InitialAlphas, InitialBetas, SaveChains, BurntIterations, SavedIterations, ThinningFactor);
-        PROTECT(__sexp_result = Rcpp::wrap(__result));
-    }
-    UNPROTECT(1);
-    return __sexp_result;
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type ConnectMatrix(ConnectMatrixSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type VoteMatrix(VoteMatrixSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type nonUnanimous(nonUnanimousSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type InitialAveragePrefs(InitialAveragePrefsSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type InitialAlphas(InitialAlphasSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type InitialBetas(InitialBetasSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type SaveChains(SaveChainsSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type BurntIterations(BurntIterationsSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type SavedIterations(SavedIterationsSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type ThinningFactor(ThinningFactorSEXP);
+    __result = Rcpp::wrap(CARIRTcpp(ConnectMatrix, VoteMatrix, nonUnanimous, InitialAveragePrefs, InitialAlphas, InitialBetas, SaveChains, BurntIterations, SavedIterations, ThinningFactor));
+    return __result;
 END_RCPP
 }
 // LDAIRTcpp
 Rcpp::List LDAIRTcpp(SEXP WordMatrixDocs, SEXP WordMatrixTerms, SEXP WordMatrixCounts, SEXP VoteMatrix, SEXP LDAtopics, SEXP LDAterms, SEXP LDAwords, SEXP LDAdocterms, SEXP LDAalpha, SEXP LDAbeta, SEXP IRTprec, SEXP StartIdealPoints, SEXP SaveChains, SEXP BurntIterations, SEXP SavedIterations);
 RcppExport SEXP eliot_LDAIRTcpp(SEXP WordMatrixDocsSEXP, SEXP WordMatrixTermsSEXP, SEXP WordMatrixCountsSEXP, SEXP VoteMatrixSEXP, SEXP LDAtopicsSEXP, SEXP LDAtermsSEXP, SEXP LDAwordsSEXP, SEXP LDAdoctermsSEXP, SEXP LDAalphaSEXP, SEXP LDAbetaSEXP, SEXP IRTprecSEXP, SEXP StartIdealPointsSEXP, SEXP SaveChainsSEXP, SEXP BurntIterationsSEXP, SEXP SavedIterationsSEXP) {
 BEGIN_RCPP
-    SEXP __sexp_result;
-    {
-        Rcpp::RNGScope __rngScope;
-        Rcpp::traits::input_parameter< SEXP >::type WordMatrixDocs(WordMatrixDocsSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type WordMatrixTerms(WordMatrixTermsSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type WordMatrixCounts(WordMatrixCountsSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type VoteMatrix(VoteMatrixSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type LDAtopics(LDAtopicsSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type LDAterms(LDAtermsSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type LDAwords(LDAwordsSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type LDAdocterms(LDAdoctermsSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type LDAalpha(LDAalphaSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type LDAbeta(LDAbetaSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type IRTprec(IRTprecSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type StartIdealPoints(StartIdealPointsSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type SaveChains(SaveChainsSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type BurntIterations(BurntIterationsSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type SavedIterations(SavedIterationsSEXP );
-        Rcpp::List __result = LDAIRTcpp(WordMatrixDocs, WordMatrixTerms, WordMatrixCounts, VoteMatrix, LDAtopics, LDAterms, LDAwords, LDAdocterms, LDAalpha, LDAbeta, IRTprec, StartIdealPoints, SaveChains, BurntIterations, SavedIterations);
-        PROTECT(__sexp_result = Rcpp::wrap(__result));
-    }
-    UNPROTECT(1);
-    return __sexp_result;
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type WordMatrixDocs(WordMatrixDocsSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type WordMatrixTerms(WordMatrixTermsSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type WordMatrixCounts(WordMatrixCountsSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type VoteMatrix(VoteMatrixSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type LDAtopics(LDAtopicsSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type LDAterms(LDAtermsSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type LDAwords(LDAwordsSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type LDAdocterms(LDAdoctermsSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type LDAalpha(LDAalphaSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type LDAbeta(LDAbetaSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type IRTprec(IRTprecSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type StartIdealPoints(StartIdealPointsSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type SaveChains(SaveChainsSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type BurntIterations(BurntIterationsSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type SavedIterations(SavedIterationsSEXP);
+    __result = Rcpp::wrap(LDAIRTcpp(WordMatrixDocs, WordMatrixTerms, WordMatrixCounts, VoteMatrix, LDAtopics, LDAterms, LDAwords, LDAdocterms, LDAalpha, LDAbeta, IRTprec, StartIdealPoints, SaveChains, BurntIterations, SavedIterations));
+    return __result;
 END_RCPP
 }
 // LIRTcpp
 Rcpp::List LIRTcpp(SEXP LambdaMatrix, SEXP VoteMatrix, SEXP IRTprec, SEXP StartIdealPoints, SEXP SaveChains, SEXP BurntIterations, SEXP SavedIterations);
 RcppExport SEXP eliot_LIRTcpp(SEXP LambdaMatrixSEXP, SEXP VoteMatrixSEXP, SEXP IRTprecSEXP, SEXP StartIdealPointsSEXP, SEXP SaveChainsSEXP, SEXP BurntIterationsSEXP, SEXP SavedIterationsSEXP) {
 BEGIN_RCPP
-    SEXP __sexp_result;
-    {
-        Rcpp::RNGScope __rngScope;
-        Rcpp::traits::input_parameter< SEXP >::type LambdaMatrix(LambdaMatrixSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type VoteMatrix(VoteMatrixSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type IRTprec(IRTprecSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type StartIdealPoints(StartIdealPointsSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type SaveChains(SaveChainsSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type BurntIterations(BurntIterationsSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type SavedIterations(SavedIterationsSEXP );
-        Rcpp::List __result = LIRTcpp(LambdaMatrix, VoteMatrix, IRTprec, StartIdealPoints, SaveChains, BurntIterations, SavedIterations);
-        PROTECT(__sexp_result = Rcpp::wrap(__result));
-    }
-    UNPROTECT(1);
-    return __sexp_result;
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type LambdaMatrix(LambdaMatrixSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type VoteMatrix(VoteMatrixSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type IRTprec(IRTprecSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type StartIdealPoints(StartIdealPointsSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type SaveChains(SaveChainsSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type BurntIterations(BurntIterationsSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type SavedIterations(SavedIterationsSEXP);
+    __result = Rcpp::wrap(LIRTcpp(LambdaMatrix, VoteMatrix, IRTprec, StartIdealPoints, SaveChains, BurntIterations, SavedIterations));
+    return __result;
 END_RCPP
 }
 // rcat
 int rcat(Rcpp::NumericVector pvec);
 static SEXP eliot_rcat_try(SEXP pvecSEXP) {
 BEGIN_RCPP
-    SEXP __sexp_result;
-    {
-        Rcpp::traits::input_parameter< Rcpp::NumericVector >::type pvec(pvecSEXP );
-        int __result = rcat(pvec);
-        PROTECT(__sexp_result = Rcpp::wrap(__result));
-    }
-    UNPROTECT(1);
-    return __sexp_result;
+    Rcpp::RObject __result;
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type pvec(pvecSEXP);
+    __result = Rcpp::wrap(rcat(pvec));
+    return __result;
 END_RCPP_RETURN_ERROR
 }
 RcppExport SEXP eliot_rcat(SEXP pvecSEXP) {
@@ -121,16 +105,12 @@ RcppExport SEXP eliot_rcat(SEXP pvecSEXP) {
 double rutnorm(double mean, double sd, double ub);
 static SEXP eliot_rutnorm_try(SEXP meanSEXP, SEXP sdSEXP, SEXP ubSEXP) {
 BEGIN_RCPP
-    SEXP __sexp_result;
-    {
-        Rcpp::traits::input_parameter< double >::type mean(meanSEXP );
-        Rcpp::traits::input_parameter< double >::type sd(sdSEXP );
-        Rcpp::traits::input_parameter< double >::type ub(ubSEXP );
-        double __result = rutnorm(mean, sd, ub);
-        PROTECT(__sexp_result = Rcpp::wrap(__result));
-    }
-    UNPROTECT(1);
-    return __sexp_result;
+    Rcpp::RObject __result;
+    Rcpp::traits::input_parameter< double >::type mean(meanSEXP);
+    Rcpp::traits::input_parameter< double >::type sd(sdSEXP);
+    Rcpp::traits::input_parameter< double >::type ub(ubSEXP);
+    __result = Rcpp::wrap(rutnorm(mean, sd, ub));
+    return __result;
 END_RCPP_RETURN_ERROR
 }
 RcppExport SEXP eliot_rutnorm(SEXP meanSEXP, SEXP sdSEXP, SEXP ubSEXP) {
@@ -157,16 +137,12 @@ RcppExport SEXP eliot_rutnorm(SEXP meanSEXP, SEXP sdSEXP, SEXP ubSEXP) {
 double rltnorm(double mean, double sd, double lb);
 static SEXP eliot_rltnorm_try(SEXP meanSEXP, SEXP sdSEXP, SEXP lbSEXP) {
 BEGIN_RCPP
-    SEXP __sexp_result;
-    {
-        Rcpp::traits::input_parameter< double >::type mean(meanSEXP );
-        Rcpp::traits::input_parameter< double >::type sd(sdSEXP );
-        Rcpp::traits::input_parameter< double >::type lb(lbSEXP );
-        double __result = rltnorm(mean, sd, lb);
-        PROTECT(__sexp_result = Rcpp::wrap(__result));
-    }
-    UNPROTECT(1);
-    return __sexp_result;
+    Rcpp::RObject __result;
+    Rcpp::traits::input_parameter< double >::type mean(meanSEXP);
+    Rcpp::traits::input_parameter< double >::type sd(sdSEXP);
+    Rcpp::traits::input_parameter< double >::type lb(lbSEXP);
+    __result = Rcpp::wrap(rltnorm(mean, sd, lb));
+    return __result;
 END_RCPP_RETURN_ERROR
 }
 RcppExport SEXP eliot_rltnorm(SEXP meanSEXP, SEXP sdSEXP, SEXP lbSEXP) {
@@ -193,17 +169,13 @@ RcppExport SEXP eliot_rltnorm(SEXP meanSEXP, SEXP sdSEXP, SEXP lbSEXP) {
 double rdtnorm(double mean, double sd, double lb, double ub);
 static SEXP eliot_rdtnorm_try(SEXP meanSEXP, SEXP sdSEXP, SEXP lbSEXP, SEXP ubSEXP) {
 BEGIN_RCPP
-    SEXP __sexp_result;
-    {
-        Rcpp::traits::input_parameter< double >::type mean(meanSEXP );
-        Rcpp::traits::input_parameter< double >::type sd(sdSEXP );
-        Rcpp::traits::input_parameter< double >::type lb(lbSEXP );
-        Rcpp::traits::input_parameter< double >::type ub(ubSEXP );
-        double __result = rdtnorm(mean, sd, lb, ub);
-        PROTECT(__sexp_result = Rcpp::wrap(__result));
-    }
-    UNPROTECT(1);
-    return __sexp_result;
+    Rcpp::RObject __result;
+    Rcpp::traits::input_parameter< double >::type mean(meanSEXP);
+    Rcpp::traits::input_parameter< double >::type sd(sdSEXP);
+    Rcpp::traits::input_parameter< double >::type lb(lbSEXP);
+    Rcpp::traits::input_parameter< double >::type ub(ubSEXP);
+    __result = Rcpp::wrap(rdtnorm(mean, sd, lb, ub));
+    return __result;
 END_RCPP_RETURN_ERROR
 }
 RcppExport SEXP eliot_rdtnorm(SEXP meanSEXP, SEXP sdSEXP, SEXP lbSEXP, SEXP ubSEXP) {
@@ -230,18 +202,14 @@ RcppExport SEXP eliot_rdtnorm(SEXP meanSEXP, SEXP sdSEXP, SEXP lbSEXP, SEXP ubSE
 Rcpp::List wordfishcpp(SEXP wfm, SEXP dir, SEXP priors, SEXP tol);
 RcppExport SEXP eliot_wordfishcpp(SEXP wfmSEXP, SEXP dirSEXP, SEXP priorsSEXP, SEXP tolSEXP) {
 BEGIN_RCPP
-    SEXP __sexp_result;
-    {
-        Rcpp::RNGScope __rngScope;
-        Rcpp::traits::input_parameter< SEXP >::type wfm(wfmSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type dir(dirSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type priors(priorsSEXP );
-        Rcpp::traits::input_parameter< SEXP >::type tol(tolSEXP );
-        Rcpp::List __result = wordfishcpp(wfm, dir, priors, tol);
-        PROTECT(__sexp_result = Rcpp::wrap(__result));
-    }
-    UNPROTECT(1);
-    return __sexp_result;
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type wfm(wfmSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type dir(dirSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type priors(priorsSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type tol(tolSEXP);
+    __result = Rcpp::wrap(wordfishcpp(wfm, dir, priors, tol));
+    return __result;
 END_RCPP
 }
 
