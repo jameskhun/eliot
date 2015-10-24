@@ -8,5 +8,6 @@ Maintainer: Benjamin E Lauderdale <b.e.lauderdale@lse.ac.uk>
 Description: Not much here yet, and what there is could sure use some documentation.
 License: GPL (>= 2)
 Imports: Rcpp (>= 0.11.3)
-LinkingTo: Rcpp, RcppArmadillo
+Depends: RcppTN
+LinkingTo: Rcpp, RcppArmadillo, RcppTN
 URL: http://github.com/lauderdale/eliot

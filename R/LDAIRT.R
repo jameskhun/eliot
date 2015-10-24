@@ -57,7 +57,7 @@ col.mean <- apply(x, 2, mean, na.rm=TRUE)
 dc1 <- sweep(x, 1, row.mean)
 dc2 <- sweep(dc1, 2, col.mean)
 dc <- dc2 + mean(x, na.rm = T)
-r <- cor(t(dc),use="pairwise")
+r <- suppressWarnings(cor(t(dc),use="pairwise"))
 r[is.na(r)] <- 0
 e <- eigen(r)
 v <- e$vectors[,1]

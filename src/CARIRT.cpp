@@ -1,4 +1,5 @@
 #include <RcppArmadillo.h>
+#include <RcppTN.h>
 #include <eliot.h>
 
 using namespace Rcpp;
@@ -119,20 +120,24 @@ for (int j = 0; j < nvotes; j++){ // for all votes...
 	for (int i = 0; i < nvoters; i++){ // for all voters...
 		if (beta[j] == 1){
 			if (Y(j,i) == 1){ // yes vote observed
-				psi(j,i) = eliot::rltnorm(theta(i),0.5,alpha(j));
+				// psi(j,i) = eliot::rltnorm(theta(i),0.5,alpha(j));
+				psi(j,i)  = RcppTN::rtn1(theta(i),0.5,alpha(j),INFINITY);	
 			}
 			if (Y(j,i) == -1){ // no vote observed
-				psi(j,i) = eliot::rutnorm(theta(i),0.5,alpha(j));
+				// psi(j,i) = eliot::rutnorm(theta(i),0.5,alpha(j));
+				psi(j,i)  = RcppTN::rtn1(theta(i),0.5,-INFINITY,alpha(j));	
 			}	
 			if (Y(j,i) == 0){ // vote missing
 				psi(j,i) = Rf_rnorm(theta(i),0.5);
 			}		
 		} else {
 			if (Y(j,i) == 1){ // yes vote observed
-				psi(j,i) = eliot::rutnorm(theta(i),0.5,alpha(j));
+				// psi(j,i) = eliot::rutnorm(theta(i),0.5,alpha(j));
+				psi(j,i)  = RcppTN::rtn1(theta(i),0.5,-INFINITY,alpha(j));		
 			}
 			if (Y(j,i) == -1){ // no vote observed
-				psi(j,i) = eliot::rltnorm(theta(i),0.5,alpha(j));
+				// psi(j,i) = eliot::rltnorm(theta(i),0.5,alpha(j));
+			  psi(j,i)  = RcppTN::rtn1(theta(i),0.5,alpha(j),INFINITY);	
 			}	
 			if (Y(j,i) == 0){ // vote missing
 				psi(j,i) = Rf_rnorm(theta(i),0.5);
@@ -199,10 +204,12 @@ for (int iter = 0; iter < (burn + mcmc*thin); iter++){
 			
 			for (int i = 0; i < nvoters; i++){
 				if (Y(j,i)*beta(j) == 1){
-					psi(j,i) = eliot::rltnorm(mu(j,i), sqrt(1.0 / psiprec(j,i)), alpha(j));
+					// psi(j,i) = eliot::rltnorm(mu(j,i), sqrt(1.0 / psiprec(j,i)), alpha(j));
+					psi(j,i) = RcppTN::rtn1(mu(j,i), sqrt(1.0 / psiprec(j,i)), alpha(j),INFINITY);
 				}
 				if (Y(j,i)*beta(j) == -1){
-					psi(j,i) = eliot::rutnorm(mu(j,i), sqrt(1.0 / psiprec(j,i)), alpha(j));
+					// psi(j,i) = eliot::rutnorm(mu(j,i), sqrt(1.0 / psiprec(j,i)), alpha(j));
+				  psi(j,i) = RcppTN::rtn1(mu(j,i), sqrt(1.0 / psiprec(j,i)), -INFINITY,alpha(j));
 				}
 				if (Y(j,i) == 0){
 					psi(j,i) = Rf_rnorm(mu(j,i), sqrt(1.0 / psiprec(j,i)));
@@ -212,23 +219,21 @@ for (int iter = 0; iter < (burn + mcmc*thin); iter++){
 			// FOR VOTE, DRAW ALPHA
 			
 			if (NonUnanimous(j) == 1){
+			  psilb = -INFINITY;
+			  psiub = INFINITY;
 				if (beta(j) == 1){
-					psilb = -1000.0;
-					psiub = 1000.0;
 					for (int i = 0; i < nvoters; i++){
 						if (psi(j,i) > psilb && Y(j,i) == -1) psilb = psi(j,i);
 						if (psi(j,i) < psiub && Y(j,i) == 1) psiub = psi(j,i);
 					}	
-					alpha(j) = eliot::rdtnorm(0.0, 1.0, psilb, psiub);
 				} else {
-					psilb = -1000.0;
-					psiub = 1000.0;
 					for (int i = 0; i < nvoters; i++){
 						if (psi(j,i) > psilb && Y(j,i) == 1) psilb = psi(j,i);
 						if (psi(j,i) < psiub && Y(j,i) == -1) psiub = psi(j,i);
 					}
-					alpha(j) = eliot::rdtnorm(0.0, 1.0, psilb, psiub);	
 				}	
+				// alpha(j) = eliot::rdtnorm(0.0, 1.0, psilb, psiub);
+				alpha(j) = RcppTN::rtn1(0.0, 1.0, psilb, psiub);
 			} 
 			
 			if (NonUnanimous(j) == 0){

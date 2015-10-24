@@ -1,4 +1,5 @@
 #include <RcppArmadillo.h>
+#include <RcppTN.h>
 #include <eliot.h>
 
 using namespace Rcpp;
@@ -241,10 +242,12 @@ for (int iter = 0; iter < burn + mcmc; iter ++){
 			muim = -1.0*IRTbeta(m,0);
 			for (int k=0; k < ntopics; k++) muim = muim + IRTbeta(m,1)*LDAIRTlambda(m,k)*IRTtheta(i,k);
 			if (Y(m,i) == 1){ // yes vote observed
-				IRTystar(m,i) = eliot::rltnorm(muim,1.0,0.0);
+				// IRTystar(m,i) = eliot::rltnorm(muim,1.0,0.0);
+				IRTystar(m,i) = RcppTN::rtn1(muim,1.0,0.0,INFINITY);				
 			}
 			if (Y(m,i) == 0){ // no vote observed
-				IRTystar(m,i) = eliot::rutnorm(muim,1.0,0.0);
+			  // IRTystar(m,i) = eliot::rutnorm(muim,1.0,0.0);
+			  IRTystar(m,i) = RcppTN::rtn1(muim,1.0,-INFINITY,0.0);	
 			}	
 			if (Y(m,i) == -9){ // vote missing
 				IRTystar(m,i) = Rf_rnorm(muim,1);
