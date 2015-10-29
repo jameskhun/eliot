@@ -1,3 +1,12 @@
+#' A summary method for the LDAIRT model output
+#' 
+#' 
+#' \code{summary.LDAIRT} 
+#' @param LDAIRT.out
+#' @param print.topwords 
+#' @param print.topvotes
+#' @param print.ordering
+#' @export
 summary.LDAIRT <- function(LDAIRT.out,print.topwords=TRUE,print.topvotes=TRUE,print.ordering=FALSE){
 	
 	ntopics <- dim(LDAIRT.out$word.chain)[1]
